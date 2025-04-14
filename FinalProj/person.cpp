@@ -1,6 +1,7 @@
 
 #include "person.h"
 #include <string>
+#include <iostream>
 using namespace std;
 
 Person::Person(){
@@ -46,32 +47,32 @@ void Person::set_person(){
 
     cout << "First Name: ";
     // pay attention to how we read first name, as it can have spaces!
-    getline(std::cin,f_name);
+    getline(cin,f_name);
 
     cout << "Last Name: ";
-    getline(std::cin,l_name);
+    getline(cin,l_name);
 
     cout << "Birthdate (M/D/YYYY): ";
-    getline(std::cin,temp);
+    getline(cin,temp);
     // pay attention to how we passed argument to the constructor of a new object created dynamically using new command
     birthdate = new Date(temp); 
 
     cout << "Type of email address: ";
     // code here
-    getline(std::cin, type);
+    getline(cin, type);
     
     cout << "Email address: ";
     // code here
-    getline(std::cin, temp);
+    getline(cin, temp);
     this->email = new Email(type, temp);
 
     cout << "Type of phone number: ";
     // code here
-    getline(std::cin, type);
+    getline(cin, type);
     cout << "Phone number: ";
     // code here
     // code here
-    getline(std::cin, temp);
+    getline(cin, temp);
     this->phone = new Phone(type, temp);
 }
 

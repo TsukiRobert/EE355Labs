@@ -89,18 +89,13 @@ void Person::set_person(string filename){
     }
     set_person();
 }
-   
-
-
-
 
 bool Person::operator==(const Person& rhs){
     // TODO: Complete this method!
     // Note: you should check first name, last name and birthday between two persons
     // refer to bool Date::operator==(const Date& rhs)
-    return (this->f_name == rhs.f_name && this->l_name == rhs.l_name && this->birthdate == rhs.birthdate);
+    return (this->f_name == rhs.f_name && this->l_name == rhs.l_name && this->birthdate->get_month() == rhs.birthdate->get_month() && this->birthdate->get_day() == rhs.birthdate->get_day() && this->birthdate->get_year() == rhs.birthdate->get_year());
 }
-
 bool Person::operator!=(const Person& rhs){ 
     // TODO: Complete this method!
     return !(*this == rhs);

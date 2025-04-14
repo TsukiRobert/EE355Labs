@@ -11,6 +11,9 @@ class Date{
     public: 
         Date(std::string date);
         void print_date();
+        int get_month() const;
+        int get_day() const;
+        int get_year() const;
 };
 
 #endif 

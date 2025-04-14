@@ -1,5 +1,6 @@
 
 #include "person.h"
+using namespace std;
 
 Person::Person(){
     // I'm already done! 
@@ -44,32 +45,32 @@ void Person::set_person(){
 
     cout << "First Name: ";
     // pay attention to how we read first name, as it can have spaces!
-    std::getline(std::cin,f_name);
+    getline(std::cin,f_name);
 
-	cout << "Last Name: ";
-    std::getline(std::cin,l_name);
+    cout << "Last Name: ";
+    getline(std::cin,l_name);
 
     cout << "Birthdate (M/D/YYYY): ";
-    std::getline(std::cin,temp);
+    getline(std::cin,temp);
     // pay attention to how we passed argument to the constructor of a new object created dynamically using new command
     birthdate = new Date(temp); 
 
     cout << "Type of email address: ";
     // code here
-    std::getline(std::cin, type);
+    getline(std::cin, type);
     
     cout << "Email address: ";
     // code here
-    std::getline(std::cin, temp);
+    getline(std::cin, temp);
     this->email = new Email(type, temp);
 
     cout << "Type of phone number: ";
     // code here
-    std::getline(std::cin, type);
+    getline(std::cin, type);
     cout << "Phone number: ";
     // code here
     // code here
-    std::getline(std::cin, temp);
+    getline(std::cin, temp);
     this->phone = new Phone(type, temp);
 }
 
@@ -106,8 +107,8 @@ bool Person::operator!=(const Person& rhs){
 
 void Person::print_person(){
     // Already implemented for you! Do not change!
-	cout << l_name <<", " << f_name << endl;
-	birthdate->print_date();
+    cout << l_name <<", " << f_name << endl;
+    birthdate->print_date();
     phone->print();
     email->print();
 }

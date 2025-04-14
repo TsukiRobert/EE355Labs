@@ -27,8 +27,7 @@ class Network{
         void push_back(Person* newEntry);
         bool remove(std::string fname, std::string lname);
         void showMenu();
-        void loadDB(std::string filename);
-        void saveDB(std::string filename);
+
 };
 
 #endif

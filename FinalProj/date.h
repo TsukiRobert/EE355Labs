@@ -9,7 +9,7 @@ class Date{
         int month, day, year;
 
     public: 
-        Date(std::string date){};
+        Date(std::string date);
         void print_date();
 };
 

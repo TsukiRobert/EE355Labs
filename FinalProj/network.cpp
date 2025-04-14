@@ -3,6 +3,7 @@
 #include <limits>
 #include "misc.h"
 #include <fstream>
+#include <iostream>
 
 Network::Network(){
     head = NULL;

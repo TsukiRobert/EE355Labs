@@ -66,8 +66,10 @@ void Phone::set_contact(){
 
 string Phone::get_contact(string style){
     // TODO: Complete this method, get hint from Email 
-    if (style=="full")
-	    return "Phone (" + type + "): " + phone_num;
+    if (style=="full"){
+        return "Phone (" + type + "):" + phone_num.substr(0,3), + "-" + phone_num.substr(3,3) + "-" +
+            phone_num.substr(6,4); 
+    }
     else 
         return phone_num;
 }

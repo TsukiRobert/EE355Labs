@@ -64,7 +64,6 @@ Person* Network::search(string fname, string lname){
     return traverse;
 }
 
-
 void Network::loadDB(string filename){
     // TODO: Complete this method
     std::ifstream file(filename);
@@ -76,22 +75,12 @@ void Network::loadDB(string filename){
     string fname, lname, bdate, email, phone; // Assuming these are the fields
     while (getline(file, fname)) { // Adjust this based on your data format
         string divider;
+        string type;
         getline(file,lname);
         getline(file, bdate);
         getline(file, email);
-        for(int i = 0; i < email.length(); i++){
-            if(email[i] == ')'){
-                email.substr(i+2);
-                break;
-            }
-        }
         getline(file, phone);
-        for(int i = 0; i < phone.length(); i++){
-            if(phone[i] == ')'){
-                phone.substr(i+2);
-                break;
-            }
-        }
+        
         getline(file, divider);
         Person* newPerson = new Person(fname, lname, bdate, email, phone);
         push_back(newPerson); // Add person to the network

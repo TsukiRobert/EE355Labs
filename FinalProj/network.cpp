@@ -4,6 +4,10 @@
 #include "misc.h"
 #include <fstream>
 #include <iostream>
+#include <regex>
+#include <cstdlib> 
+
+using namespace std;
 
 Network::Network(){
     head = NULL;
@@ -227,6 +231,20 @@ void Network::showMenu(){
             // TODO: Complete me!
             cout << "Loading network database \n";
             // TODO: print all the files in this same directory that have "networkDB.txt" format
+            system("ls > file_list.txt");
+            ifstream infile("file_list.txt");
+            regex match (".+\\.txt$");
+            string file;
+            while (getline (infile, file)){
+            	if (file == "file_list.txt"){
+            		continue;
+            		}
+            	if (regex_match(file, match)){
+            	cout << file << endl;  
+            	}
+            }
+            infile.close();
+            
             // print format: one filename one line.
             // This step just shows all the available .txt file to load.
             string filename;
@@ -237,8 +255,8 @@ void Network::showMenu(){
                 cout << "File FILENAME does not exist!" << endl;
             }
             else{
-                loadDB(filename);                   
-                // If file is loaded successfully, also print the count of people in it: 
+            	loadDB(filename);
+                    // If file is loaded successfully, also print the count of people in it: 
                 cout << "Network loaded from " << filename << " with " << count << " people \n";
             }
         }
@@ -311,4 +329,3 @@ void Network::showMenu(){
         cout << "\033[2J\033[1;1H";
     }
 }
-

@@ -69,9 +69,9 @@ void Network::loadDB(string filename){
         return;
     }
 
-    string fname, lname, bdate; // Assuming these are the fields
-    while (file >> fname >> lname >> bdate) { // Adjust this based on your data format
-        Person* newPerson = new Person(fname, lname, bdate);
+    string fname, lname, bdate, email, phone; // Assuming these are the fields
+    while (file >> fname >> lname >> bdate>> email >>phone) { // Adjust this based on your data format
+        Person* newPerson = new Person(fname, lname, bdate, email, phone);
         push_back(newPerson); // Add person to the network
     }
     file.close();

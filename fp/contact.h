@@ -31,9 +31,9 @@ private:
     //other attributes
 public:
     Email(std::string type, std::string email_addr);  
-    void print();                  
-    std::string get_contact(std::string style = "full"); 
-    void set_contact();
+    void print() override;                  
+    std::string get_contact(std::string style = "full") override; 
+    void set_contact() override;
     std::string get_type() { return type; }
     std::string get_address() { return email_addr; }
 };  
@@ -44,9 +44,9 @@ private:
     //other attributes 
 public:
     Phone(std::string type, std::string phone_number);  
-    void print();                   
-    std::string get_contact(std::string style = "full"); 
-    void set_contact();        
+    void print() override;                   
+    std::string get_contact(std::string style = "full") override; 
+    void set_contact() override;        
     std::string get_type() { return type; }
     std::string get_number() { return phone_num; }  
 };

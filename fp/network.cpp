@@ -1,4 +1,3 @@
-
 #include "network.h"
 #include <limits>
 #include "misc.h"
@@ -105,18 +104,14 @@ void Network::saveDB(string filename) {
 
     Person* ptr = head;
     while (ptr != NULL) {
-        file << ptr->f_name << endl;
-        file << ptr->l_name << endl;
-
-        file << ptr->birthdate->get_month() << "/"
-             << ptr->birthdate->get_day() << "/"
+        file << ptr->l_name << ", "<< ptr->f_name << endl;
+        file << ptr->birthdate->get_month_name() << " "
+             << ptr->birthdate->get_day() << ", "
              << ptr->birthdate->get_year() << endl;
+             
+        file << "Phone (" << ptr->phone->get_type() << "): " << ptr->phone->get_number() << endl;
 
-        file << "(" << ptr->email->get_type() << ") "
-             << ptr->email->get_address() << endl;
-
-        file << "(" << ptr->phone->get_type() << ") "
-             << ptr->phone->get_number() << endl;
+        file << "Email (" << ptr->email->get_type() << "): " << ptr->email->get_address() << endl;
 
         file << "--------------------" << endl;
 

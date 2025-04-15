@@ -88,8 +88,7 @@ void Network::loadDB(string filename){
     file.close();
 }
 
-void Network::saveDB(string filename){
-    // TODO: Complete this method
+void Network::saveDB(string filename) {
     ofstream file(filename);
     if (!file.is_open()) {
         cout << "Could not open the file!" << endl;
@@ -98,13 +97,26 @@ void Network::saveDB(string filename){
 
     Person* ptr = head;
     while (ptr != NULL) {
-        file << ptr->f_name << " " << ptr->l_name << " " << ptr->birthdate << endl;
+        file << ptr->f_name << endl;
+        file << ptr->l_name << endl;
+
+        file << ptr->bdate->get_month() << "/"
+             << ptr->bdate->get_day() << "/"
+             << ptr->bdate->get_year() << endl;
+
+        file << "(" << ptr->email->get_type() << ") "
+             << ptr->email->get_address() << endl;
+
+        file << "(" << ptr->phone->get_type() << ") "
+             << ptr->phone->get_number() << endl;
+
+        file << "--------------------" << endl;
+
         ptr = ptr->next;
     }
-    file.close();
-    cout << "Network saved to " << filename << endl;
-}
 
+    file.close();
+}
 
 void Network::printDB(){
     // Leave me alone! I know how to print! 

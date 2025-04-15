@@ -25,6 +25,15 @@ Network::Network(string fileName){
 }
 
 Network::~Network(){ 
+	Person* current = head;
+        while (current!=nullptr){
+            Person* temp = current;
+            current = current -> next;
+            delete temp;
+            }
+        head = nullptr;
+        tail = nullptr;
+        count = 0;
 }
 
 Person* Network::search(Person* searchEntry){
@@ -247,6 +256,15 @@ void Network::showMenu(){
             cout << "Network saved in " << fileName << endl;
         }
         else if (opt==2){
+        	Person* current = head; // loading should erase all elements of current LL
+        	while (current!=nullptr){
+            		Person* temp = current;
+            		current = current -> next;
+            		delete temp;
+            	}
+        	head = nullptr;
+        	tail = nullptr;
+        	count = 0;
             // TODO: Complete me!
             cout << "Loading network database \n";
             // TODO: print all the files in this same directory that have "networkDB.txt" format

@@ -12,7 +12,7 @@ class Date{
         Date(std::string date);
         void print_date();
         int get_month() const;
-        string get_month_name() const;
+        std::string get_month_name() const;
         int get_day() const;
         int get_year() const;
 };

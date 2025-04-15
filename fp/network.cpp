@@ -290,7 +290,7 @@ void Network::showMenu(){
             cin >> filename;
             // If file with name FILENAME does not exist: 
             if (!(ifstream(filename))){
-                cout << "File FILENAME does not exist!" << endl;
+                cout << "File " << filename << " does not exist!" << endl;
             }
             else{
             	loadDB(filename);

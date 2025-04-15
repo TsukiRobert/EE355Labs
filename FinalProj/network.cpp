@@ -251,7 +251,7 @@ void Network::showMenu(){
             	}
             }
             infile.close();
-            
+            remove("file_list.txt");            
             // print format: one filename one line.
             // This step just shows all the available .txt file to load.
             string filename;

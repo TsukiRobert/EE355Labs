@@ -25,9 +25,6 @@ public:
 	virtual void set_contact() = 0;
 };
 
-
-
-
 class Email: public Contact{
 private:
     std::string email_addr;
@@ -37,11 +34,9 @@ public:
     void print();                  
     std::string get_contact(std::string style = "full"); 
     void set_contact();
-};
-
-
-
-    
+    std::string get_type() { return type; }
+    std::string get_address() { return email_addr; }
+};  
 
 class Phone: public Contact{
 private:
@@ -51,7 +46,9 @@ public:
     Phone(std::string type, std::string phone_number);  
     void print();                   
     std::string get_contact(std::string style = "full"); 
-    void set_contact();          
+    void set_contact();        
+    std::string get_type() { return type; }
+    std::string get_number() { return phone_num; }  
 };
 
 #endif

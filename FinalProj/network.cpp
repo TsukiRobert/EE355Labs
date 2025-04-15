@@ -237,8 +237,9 @@ void Network::showMenu(){
                 cout << "File FILENAME does not exist!" << endl;
             }
             else{
-                    // If file is loaded successfully, also print the count of people in it: 
-                cout << "Network loaded from " << fileName << " with " << count << " people \n";
+                loadDB(filename);                   
+                // If file is loaded successfully, also print the count of people in it: 
+                cout << "Network loaded from " << filename << " with " << count << " people \n";
             }
         }
         else if (opt == 3){

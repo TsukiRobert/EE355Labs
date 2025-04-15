@@ -100,9 +100,9 @@ void Network::saveDB(string filename) {
         file << ptr->f_name << endl;
         file << ptr->l_name << endl;
 
-        file << ptr->bdate->get_month() << "/"
-             << ptr->bdate->get_day() << "/"
-             << ptr->bdate->get_year() << endl;
+        file << ptr->birthdate->get_month() << "/"
+             << ptr->birthdate->get_day() << "/"
+             << ptr->birthdate->get_year() << endl;
 
         file << "(" << ptr->email->get_type() << ") "
              << ptr->email->get_address() << endl;

@@ -44,6 +44,9 @@ void Date::print_date(){
 
 int Date::get_month() const{
     return month;}
+
+string Date::get_month_name() const{
+    return Months[month];}
     
  int Date::get_day() const{
     return day;}

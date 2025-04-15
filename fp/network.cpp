@@ -1,3 +1,4 @@
+
 #include "network.h"
 #include <limits>
 #include "misc.h"
@@ -248,7 +249,14 @@ void Network::showMenu(){
             // and people are delimited similar to "networkDB.txt" format
             getline(cin, fileName);
             saveDB(fileName);
-            cout << "Network saved in " << fileName << endl;
+            ofstream check(fileName);
+            if (check.is_open()){
+            	cout << "Network saved in " << fileName << endl;
+            	}
+           check.close(); 
+            	
+            
+     
         }
         else if (opt==2){
         	Person* current = head; // loading should erase all elements of current LL

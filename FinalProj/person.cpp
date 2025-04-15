@@ -21,11 +21,26 @@ Person::~Person(){
 Person::Person(string f_name, string l_name, string b_date, string email, string phone){
     // TODO: Complete this method!
     // phone and email strings are in full version
+    string type;
     this->f_name = f_name;
     this->l_name = l_name;
     this->birthdate = new Date(b_date);
-    this->email = new Email("", email);
-    this->phone = new Phone("", phone);
+    for(int i = 0; i < email.length(); i++){
+        if(email[i] == ')'){
+            email.substr(i+2);
+            type = email.substr(1, i);
+            break;
+        }
+    }
+    this->email = new Email(type, email);
+    for(int i = 0; i < phone.length(); i++){
+        if(phone[i] == ')'){
+            phone.substr(i+2);
+            type = phone.substr(1, i);
+            break;
+        }
+    }
+    this->phone = new Phone(type, phone);
 }
 
 

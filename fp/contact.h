@@ -34,8 +34,6 @@ public:
     void print() override;                  
     std::string get_contact(std::string style = "full") override; 
     void set_contact() override;
-    std::string get_type() { return type; }
-    std::string get_address() { return email_addr; }
 };  
 
 class Phone: public Contact{
@@ -47,8 +45,6 @@ public:
     void print() override;                   
     std::string get_contact(std::string style = "full") override; 
     void set_contact() override;        
-    std::string get_type() { return type; }
-    std::string get_number() { return phone_num; }  
 };
 
 #endif

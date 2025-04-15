@@ -17,7 +17,6 @@ Person::~Person(){
     // TODO: complete the method!
 }
 
-
 Person::Person(string f_name, string l_name, string b_date, string email, string phone){
     // TODO: Complete this method!
     // phone and email strings are in full version
@@ -27,22 +26,21 @@ Person::Person(string f_name, string l_name, string b_date, string email, string
     this->birthdate = new Date(b_date);
     for(int i = 0; i < email.length(); i++){
         if(email[i] == ')'){
-            email.substr(i+2);
-            type = email.substr(1, i);
+            email = email.substr(i+2);
+            type = email.substr(1, i-1);
             break;
         }
     }
     this->email = new Email(type, email);
     for(int i = 0; i < phone.length(); i++){
         if(phone[i] == ')'){
-            phone.substr(i+2);
-            type = phone.substr(1, i);
+            phone = phone.substr(i+2);
+            type = phone.substr(1, i-1);
             break;
         }
     }
     this->phone = new Phone(type, phone);
 }
-
 
 Person::Person(string filename){
     set_person(filename);

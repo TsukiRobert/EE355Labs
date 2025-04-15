@@ -110,9 +110,9 @@ void Network::saveDB(string filename) {
              << ptr->birthdate->get_day() << ", "
              << ptr->birthdate->get_year() << endl;
              
-        file << "Phone (" << ptr->phone->get_type() << "): " << ptr->phone->get_number() << endl;
+        file << ptr->email->get_contact() << endl;
 
-        file << "Email (" << ptr->email->get_type() << "): " << ptr->email->get_address() << endl;
+        file << ptr->phone->get_contact() << endl;
 
         file << "--------------------" << endl;
 

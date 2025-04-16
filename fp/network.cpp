@@ -87,8 +87,8 @@ void Network::loadDB(string filename){
         string divider;
         getline(file,lname);
         getline(file, bdate);
-        getline(file, email);
         getline(file, phone);
+	getline(file, email);
         getline(file, divider);
         Person* newPerson = new Person(fname, lname, bdate, email, phone);
         push_back(newPerson); // Add person to the network

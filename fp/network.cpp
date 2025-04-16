@@ -345,13 +345,13 @@ void Network::showMenu(){
             // if not found: cout << "Person not found! \n";
             cout << "Print people with last name \n";
             cout << "Last name: ";
-            string l_name;
-            cin >> l_name;
+            string la_name1;
+            getline(cin,la_name1);
 
             bool found = false;
             Person* traverse = head;
             while(traverse != NULL){
-                if (traverse->l_name == l_name){
+                if (traverse->l_name == la_name1){
                     cout << traverse->f_name << endl;
                     cout << traverse->l_name << endl;
                     cout << traverse->birthdate->get_month() << "/" << traverse->birthdate->get_day() << "/" << traverse->birthdate->get_year() <<endl;

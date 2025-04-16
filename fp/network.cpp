@@ -350,7 +350,11 @@ void Network::showMenu(){
             Person* traverse = head;
             while(traverse != NULL){
                 if (traverse->l_name == l_name){
-                    traverse->print_person();
+                    cout << traverse->f_name << endl;
+                    cout << traverse->l_name << endl;
+                    cout << traverse->birthdate->get_month() << "/" << traverse->birthdate->get_day() << "/" << traverse->birthdate->get_year() <<endl;
+                    cout << traverse->email->get_contact() << endl;
+                    cout << traverse -> phone->get_contact()<<endl;
                     found = true;
                 }
                 traverse = traverse->next;

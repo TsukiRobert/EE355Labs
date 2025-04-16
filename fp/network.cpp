@@ -109,10 +109,10 @@ void Network::saveDB(string filename) {
         file << ptr->birthdate->get_month_name() << " "
              << ptr->birthdate->get_day() << ", "
              << ptr->birthdate->get_year() << endl;
+
+	file << ptr->phone->get_contact() << endl;
              
         file << ptr->email->get_contact() << endl;
-
-        file << ptr->phone->get_contact() << endl;
 
         file << "--------------------" << endl;
 

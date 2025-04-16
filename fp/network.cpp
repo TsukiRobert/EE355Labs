@@ -250,9 +250,14 @@ void Network::showMenu(){
             getline(cin, fileName);
             saveDB(fileName);
             ofstream check(fileName);
-            if (check.is_open()){
-            	cout << "Network saved in " << fileName << endl;
-            	}
+            if (check.is_open()) {
+            	check.close();
+                saveDB(fileName);
+    		cout << "Network saved in " << fileName << endl;
+} 		
+	     else {
+    		 cout << "Could not open the file: " << fileName << endl;
+	}
            check.close(); 
             	
             

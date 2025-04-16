@@ -323,15 +323,17 @@ void Network::showMenu(){
             // TODO: Complete me!
             // if found, cout << "Remove Successful! \n";
             // if not found: cout << "Person not found! \n";
-            string f_name, l_name;
-            cout << "Enter a name to remove: " << endl;
-            cin >> f_name >> l_name;
-            bool result = remove (f_name, l_name);
+            string fi_name, la_name;
+            cout << "Enter the first name to remove: " << endl;
+            getline(cin, fi_name);
+	    cout << "Enter the last name to remove: " << endl;
+	    getline(cin, la_name);
+            bool result = remove (fi_name, la_name);
             if (result){
                 cout << "Remove Successful! \n";
                 cout << "Removing a person \n";
-                cout << "First name: " << f_name << endl;
-                cout << "Last name: " << l_name << endl;
+                cout << "First name: " << fi_name << endl;
+                cout << "Last name: " << la_name << endl;
             }
             else{
                 cout << "Person not found! \n";

@@ -258,10 +258,7 @@ void Network::showMenu(){
 	     else {
     		 cout << "Could not open the file: " << fileName << endl;
 	}
-           check.close(); 
-            	
-            
-     
+           
         }
         else if (opt==2){
         	Person* current = head; // loading should erase all elements of current LL

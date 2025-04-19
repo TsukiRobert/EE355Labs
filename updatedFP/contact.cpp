@@ -1,8 +1,6 @@
 
 #include "contact.h"
 // TODO: Add needed libraries! 
-#include <iostream>
-#include <string>
 
 using namespace std;
 

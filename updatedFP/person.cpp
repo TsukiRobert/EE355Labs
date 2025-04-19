@@ -1,8 +1,7 @@
 
 #include "person.h"
-#include <string>
 #include <iostream>
-#include <vector>
+
 using namespace std;
 
 Person::Person(){

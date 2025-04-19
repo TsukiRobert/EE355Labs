@@ -8,5 +8,6 @@ using namespace std;
 
 void printMe(string type);
 
+string codeName(string str1, string str2);
 
 #endif

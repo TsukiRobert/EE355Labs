@@ -69,7 +69,7 @@ string Phone::get_contact(string style){
             phone_num.substr(6,4); 
     }
     else 
-        return phone_num;
+        return phone_num.substr(0,3) + "-" + phone_num.substr(3,3) + "-" + phone_num.substr(6,4);
 }
 
 

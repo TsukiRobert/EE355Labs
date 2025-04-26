@@ -413,7 +413,7 @@ void Network::showMenu(){
         }
 
         else if (opt==6){
-            cout <<"Make friends \n";
+            cout <<"Make friends:\n";
             cout <<"Person 1\n";
             cout << "First Name: ";
             string first, last;

@@ -145,6 +145,7 @@ void Network::saveDB(string filename) {
         file << ptr->birthdate->get_month() << "/"    // or Month D, YYYY
             << ptr->birthdate->get_day()   << "/"
             << ptr->birthdate->get_year()  << '\n';
+        file << "(Age) " << ptr->get_age() << '\n';
 
         file << "Phone " << ptr->phone->get_contact() << endl;
 

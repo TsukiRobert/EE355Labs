@@ -1,10 +1,30 @@
-
 #include "person.h"
 #include "misc.h"
 #include <iostream>
 #include <utility>
-#include <ctime>
+#include <cctype>   
+#include <ctime>    
 using namespace std;
+using namespace std;
+
+
+static string first3(const string& rawPhone)
+{
+    string digits;
+    for (char c : rawPhone) if (isdigit(c)) digits += c;
+    return digits.size() >= 3 ? digits.substr(0, 3) : "";
+}
+
+static int compute_age(const Date& b)
+{
+    time_t now = time(nullptr);
+    tm* t = localtime(&now);
+    int yrs = (t->tm_year + 1900) - b.get_year();
+    if ((t->tm_mon + 1) <  b.get_month() ||
+        ((t->tm_mon + 1) == b.get_month() && t->tm_mday < b.get_day()))
+        --yrs;
+    return yrs;
+}
 
 Person::Person(){
     // I'm already done! 
@@ -252,18 +272,3 @@ void Person::print_friends (){
 
 }
 
-// phase 3 
-static int compute_age(const Date& dob)
-{
-    time_t t = time(nullptr);
-    tm* now  = localtime(&t);
-    int yrs = now->tm_year + 1900 - dob.get_year();
-
-    // birthday hasn’t happened yet this year?
-    if ((dob.get_month()  >  now->tm_mon + 1) ||
-        (dob.get_month() == now->tm_mon + 1 && dob.get_day() > now->tm_mday))
-        --yrs;
-    return yrs;
-}
-
-static std::string first3(const string& digits) { return digits.substr(0,3); }
